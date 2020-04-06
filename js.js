@@ -227,25 +227,31 @@
 // [0,0,1,0]   => [1,0,0,0]
 //
 //??Ця функція пряцює якщо немає двох нулів підряд, не розумію чому так?
-// let nullTransfer=(arr)=>{
+// let nullTransfer=(arr)=> {
 //     console.log(arr);
-//     let number=0;
+//     let number = 0;
 //     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i]===0){
-//             arr.splice(i,1);
+//         if (arr[i] === 0 && arr[i+1]!=0) {
+//             arr.splice(i, 1);
 //             number++;
 //         }
+//
+//         if (arr[i] === 0 && arr[i+1]===0) {
+//             arr.splice(i, 2);
+//             number+=2;
+//         }
+//
+//         let nullMasive = [];
+//         for (let i = 0; i < number; i++) {
+//             nullMasive[i] = 0;
+//         }
+//         Array.prototype.push.apply(arr, nullMasive);
+//         console.log(arr);
+//         //console.log(numbers);
+//         return numbers;
 //     }
-//     let nullMasive=[];
-//     for (let i = 0; i < number; i++) {
-//         nullMasive[i]=0;
-//     }
-//     Array.prototype.push.apply(arr,nullMasive);
-//     console.log(arr);
-//     console.log(numbers);
-//     return numbers;
 // }
-// let numbers=[0,0,0,0,3];
+// let numbers=[0,0,1,0];
 // nullTransfer(numbers);
 // Створити функцію яка :
 // - Додає в боді блок з текстом "Hello owu"
@@ -265,34 +271,56 @@
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
 let cars=[
-    {model:'Mitsubishi', year: 2019, power:124 , color:'white'},
-    {model:'Hyundai', year:2010 , power:130 , color:'black'},
-    {model:'Fiesta', year:2015 , power:120 , color:'silver'},
-    {model:'Chevrolet', year:2014, power:134 , color:'red'},
-    {model:'Toyota', year:2010 , power:124 , color:'grey'},
-    {model:'Volkswagen', year:2000 , power:137 , color:'blue'},
-    {model:'Honda', year:2005 , power:135 , color:'dark blue'},
-    {model:'Lanos', year:2006, power:115 , color:'dark green'},
-    {model:'Kia', year:2013 , power:118 , color:'jellow'},
-    {model:'Nissan', year:2020 , power:138 , color:'claret'}
+    {id:1,model:'Mitsubishi', year: 2019, power:124 , color:'white'},
+    {id:2,model:'Hyundai', year:2010 , power:130 , color:'black'},
+    {id:3,model:'Fiesta', year:2015 , power:120 , color:'silver'},
+    {id:4,model:'Chevrolet', year:2014, power:134 , color:'red'},
+    {id:5,model:'Toyota', year:2010 , power:124 , color:'grey'},
+    {id:6,model:'Volkswagen', year:2000 , power:137 , color:'blue'},
+    {id:7,model:'Honda', year:2005 , power:135 , color:'dark blue'},
+    {id:8,model:'Lanos', year:2006, power:115 , color:'dark green'},
+    {id:9,model:'Kia', year:2013 , power:118 , color:'jellow'},
+    {id:10,model:'Nissan', year:2020 , power:138 , color:'claret'}
 ]
-let masive=(a,type)=>{
-let container=document.getElementById(type);
-
-        for (let object of a){
-            let div=document.createElement('div');
-            div.innerText+=???;
-            container.appendChild(div);
-        }
-    }
-
-masive(cars,'div');
+// let masive=(arr,id)=>{
+// let elementById=document.getElementById(id);
+//
+//         for (const car of arr){
+//             let carDiv=document.createElement('div');
+//             carDiv.style.background="aqua";
+//             carDiv.style.marginBottom='5px';
+//             carDiv.innerText=car.model;
+//
+//             elementById.appendChild(carDiv);
+//         }
+//     }
+//
+// masive(cars,'car');
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 // Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 // Для кожної властивості створити всередені блока автомоблія свій блок
-// function f(a,id) {
-//     let div=
+// function masive(arr, id) {
+//     let elementById = document.getElementById(id);
+//
+//     for (const car of arr) {
+//         let carDIv = document.createElement('div');
+//             carDIv.style.background="aqua";
+//             carDIv.style.marginBottom='5px';
+//         carDIv.innerText = `${car.model}, ${car.color}`;
+//         for (const carElement of arr) {
+//             let innerDiv=document.createElement('div');
+//             carDIv.style.background="pink";
+//             carDIv.style.marginBottom='2px';
+//             innerDiv.innerText=`${carElement.year},${carElement.power},${carElement.color}`;
+//             carDIv.appendChild(innerDiv);
+//         }
+//
+//         document.body.appendChild(carDIv);
+//     }
 // }
+//
+//
+// masive(cars, 'car')
 //
 
 
